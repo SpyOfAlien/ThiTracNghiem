@@ -68,7 +68,6 @@
             this.gIANGDAYTableAdapter = new TN.DSTableAdapters.GIANGDAYTableAdapter();
             this.bdsCH = new System.Windows.Forms.BindingSource(this.components);
             this.cAUHOITableAdapter = new TN.DSTableAdapters.CAUHOITableAdapter();
-  
             mAMHLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
             mAKHLabel = new System.Windows.Forms.Label();
@@ -81,7 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCH)).BeginInit();
-    
             this.SuspendLayout();
             // 
             // mAMHLabel
@@ -434,7 +432,6 @@
             // cAUHOITableAdapter
             // 
             this.cAUHOITableAdapter.ClearBeforeFill = true;
-           
             // 
             // formMonHoc
             // 
@@ -450,7 +447,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formMonHoc";
-            this.Text = "formMonHoc";
+            this.Text = "Môn học";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -463,7 +460,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCH)).EndInit();
-           
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.crystalReportViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.cmbCS = new System.Windows.Forms.ComboBox();
-            this.cmbTenLop = new System.Windows.Forms.ComboBox();
-            this.cmbTenMH = new System.Windows.Forms.ComboBox();
-            this.btnXem = new System.Windows.Forms.Button();
-            this.btnDong = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnDong = new System.Windows.Forms.Button();
+            this.btnXem = new System.Windows.Forms.Button();
+            this.cmbTenMH = new System.Windows.Forms.ComboBox();
+            this.cmbTenLop = new System.Windows.Forms.ComboBox();
+            this.cmbCS = new System.Windows.Forms.ComboBox();
+            this.crystalReportViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,52 +57,32 @@
             this.panel1.Size = new System.Drawing.Size(933, 100);
             this.panel1.TabIndex = 0;
             // 
-            // crystalReportViewer
+            // label3
             // 
-            this.crystalReportViewer.ActiveViewIndex = -1;
-            this.crystalReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer.Location = new System.Drawing.Point(0, 100);
-            this.crystalReportViewer.Name = "crystalReportViewer";
-            this.crystalReportViewer.Size = new System.Drawing.Size(933, 300);
-            this.crystalReportViewer.TabIndex = 1;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(269, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 19);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Lớp: ";
             // 
-            // cmbCS
+            // label2
             // 
-            this.cmbCS.FormattingEnabled = true;
-            this.cmbCS.Location = new System.Drawing.Point(55, 30);
-            this.cmbCS.Name = "cmbCS";
-            this.cmbCS.Size = new System.Drawing.Size(177, 27);
-            this.cmbCS.TabIndex = 0;
-            this.cmbCS.SelectedIndexChanged += new System.EventHandler(this.cmbCS_SelectedIndexChanged);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(488, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 19);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Môn: ";
             // 
-            // cmbTenLop
+            // label1
             // 
-            this.cmbTenLop.FormattingEnabled = true;
-            this.cmbTenLop.Location = new System.Drawing.Point(328, 30);
-            this.cmbTenLop.Name = "cmbTenLop";
-            this.cmbTenLop.Size = new System.Drawing.Size(121, 27);
-            this.cmbTenLop.TabIndex = 1;
-            this.cmbTenLop.SelectedIndexChanged += new System.EventHandler(this.cmbTenLop_SelectedIndexChanged);
-            // 
-            // cmbTenMH
-            // 
-            this.cmbTenMH.FormattingEnabled = true;
-            this.cmbTenMH.Location = new System.Drawing.Point(539, 30);
-            this.cmbTenMH.Name = "cmbTenMH";
-            this.cmbTenMH.Size = new System.Drawing.Size(121, 27);
-            this.cmbTenMH.TabIndex = 2;
-            // 
-            // btnXem
-            // 
-            this.btnXem.Location = new System.Drawing.Point(711, 30);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(84, 30);
-            this.btnXem.TabIndex = 3;
-            this.btnXem.Text = "Xem";
-            this.btnXem.UseVisualStyleBackColor = true;
-            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 19);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Cơ sở:";
             // 
             // btnDong
             // 
@@ -114,32 +94,52 @@
             this.btnDong.UseVisualStyleBackColor = true;
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
-            // label1
+            // btnXem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 19);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Cơ sở:";
+            this.btnXem.Location = new System.Drawing.Point(711, 30);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(84, 30);
+            this.btnXem.TabIndex = 3;
+            this.btnXem.Text = "Xem";
+            this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
-            // label2
+            // cmbTenMH
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(488, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 19);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Môn: ";
+            this.cmbTenMH.FormattingEnabled = true;
+            this.cmbTenMH.Location = new System.Drawing.Point(539, 30);
+            this.cmbTenMH.Name = "cmbTenMH";
+            this.cmbTenMH.Size = new System.Drawing.Size(121, 27);
+            this.cmbTenMH.TabIndex = 2;
             // 
-            // label3
+            // cmbTenLop
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(269, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 19);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Lớp: ";
+            this.cmbTenLop.FormattingEnabled = true;
+            this.cmbTenLop.Location = new System.Drawing.Point(328, 30);
+            this.cmbTenLop.Name = "cmbTenLop";
+            this.cmbTenLop.Size = new System.Drawing.Size(121, 27);
+            this.cmbTenLop.TabIndex = 1;
+            this.cmbTenLop.SelectedIndexChanged += new System.EventHandler(this.cmbTenLop_SelectedIndexChanged);
+            // 
+            // cmbCS
+            // 
+            this.cmbCS.FormattingEnabled = true;
+            this.cmbCS.Location = new System.Drawing.Point(55, 30);
+            this.cmbCS.Name = "cmbCS";
+            this.cmbCS.Size = new System.Drawing.Size(177, 27);
+            this.cmbCS.TabIndex = 0;
+            this.cmbCS.SelectedIndexChanged += new System.EventHandler(this.cmbCS_SelectedIndexChanged);
+            // 
+            // crystalReportViewer
+            // 
+            this.crystalReportViewer.ActiveViewIndex = -1;
+            this.crystalReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer.Location = new System.Drawing.Point(0, 100);
+            this.crystalReportViewer.Name = "crystalReportViewer";
+            this.crystalReportViewer.Size = new System.Drawing.Size(933, 300);
+            this.crystalReportViewer.TabIndex = 1;
             // 
             // formXemBangDiem
             // 
@@ -151,7 +151,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formXemBangDiem";
-            this.Text = "formXemBangDiem";
+            this.Text = "Xem bảng điểm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formXemBangDiem_Load);
             this.panel1.ResumeLayout(false);

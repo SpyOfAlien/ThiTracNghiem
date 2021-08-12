@@ -81,7 +81,7 @@
             this.pnThongTin.Controls.Add(this.groupBox3);
             this.pnThongTin.Controls.Add(this.gbTG);
             this.pnThongTin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnThongTin.Location = new System.Drawing.Point(1101, 0);
+            this.pnThongTin.Location = new System.Drawing.Point(1093, 0);
             this.pnThongTin.Name = "pnThongTin";
             this.pnThongTin.Size = new System.Drawing.Size(261, 731);
             this.pnThongTin.TabIndex = 0;
@@ -251,7 +251,7 @@
             this.pnND.Location = new System.Drawing.Point(0, 0);
             this.pnND.Margin = new System.Windows.Forms.Padding(3, 30, 3, 30);
             this.pnND.Name = "pnND";
-            this.pnND.Size = new System.Drawing.Size(1101, 731);
+            this.pnND.Size = new System.Drawing.Size(1093, 731);
             this.pnND.TabIndex = 2;
             // 
             // pnLC
@@ -262,7 +262,7 @@
             this.pnLC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnLC.Location = new System.Drawing.Point(239, 181);
             this.pnLC.Name = "pnLC";
-            this.pnLC.Size = new System.Drawing.Size(862, 550);
+            this.pnLC.Size = new System.Drawing.Size(854, 550);
             this.pnLC.TabIndex = 2;
             // 
             // btnNext
@@ -328,7 +328,7 @@
             this.pnNDCH.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnNDCH.Location = new System.Drawing.Point(239, 0);
             this.pnNDCH.Name = "pnNDCH";
-            this.pnNDCH.Size = new System.Drawing.Size(862, 181);
+            this.pnNDCH.Size = new System.Drawing.Size(854, 181);
             this.pnNDCH.TabIndex = 1;
             // 
             // lbNDCH
@@ -439,13 +439,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 731);
+            this.ClientSize = new System.Drawing.Size(1354, 731);
             this.Controls.Add(this.pnND);
             this.Controls.Add(this.pnThongTin);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formThi";
-            this.Text = "formThi";
+            this.Text = "Thi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formThi_Load);
             this.pnThongTin.ResumeLayout(false);

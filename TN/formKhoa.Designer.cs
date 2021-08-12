@@ -715,7 +715,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formKhoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "formKhoa";
+            this.Text = "Khoa";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formKhoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

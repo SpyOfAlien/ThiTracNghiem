@@ -793,7 +793,7 @@ namespace TN
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "formCauHoi";
-            this.Text = "formCauHoi";
+            this.Text = "Câu hỏi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formCauHoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

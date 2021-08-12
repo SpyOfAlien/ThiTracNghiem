@@ -31,6 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbTen = new System.Windows.Forms.ComboBox();
+            this.lbTen = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnTao = new System.Windows.Forms.Button();
             this.txtConfirmPass = new System.Windows.Forms.TextBox();
@@ -41,8 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbNhom = new System.Windows.Forms.ComboBox();
-            this.lbTen = new System.Windows.Forms.Label();
-            this.cmbTen = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +86,23 @@
             this.groupBox1.Size = new System.Drawing.Size(489, 391);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // cmbTen
+            // 
+            this.cmbTen.FormattingEnabled = true;
+            this.cmbTen.Location = new System.Drawing.Point(211, 95);
+            this.cmbTen.Name = "cmbTen";
+            this.cmbTen.Size = new System.Drawing.Size(205, 27);
+            this.cmbTen.TabIndex = 12;
+            // 
+            // lbTen
+            // 
+            this.lbTen.AutoSize = true;
+            this.lbTen.Location = new System.Drawing.Point(100, 98);
+            this.lbTen.Name = "lbTen";
+            this.lbTen.Size = new System.Drawing.Size(92, 19);
+            this.lbTen.TabIndex = 11;
+            this.lbTen.Text = "Tên nhân viên";
             // 
             // btnHuy
             // 
@@ -171,23 +188,6 @@
             this.cmbNhom.Size = new System.Drawing.Size(205, 27);
             this.cmbNhom.TabIndex = 0;
             // 
-            // lbTen
-            // 
-            this.lbTen.AutoSize = true;
-            this.lbTen.Location = new System.Drawing.Point(100, 98);
-            this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(92, 19);
-            this.lbTen.TabIndex = 11;
-            this.lbTen.Text = "Tên nhân viên";
-            // 
-            // cmbTen
-            // 
-            this.cmbTen.FormattingEnabled = true;
-            this.cmbTen.Location = new System.Drawing.Point(211, 95);
-            this.cmbTen.Name = "cmbTen";
-            this.cmbTen.Size = new System.Drawing.Size(205, 27);
-            this.cmbTen.TabIndex = 12;
-            // 
             // formTaoLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -198,7 +198,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formTaoLogin";
-            this.Text = "formTaoLogin";
+            this.Text = "Tạo tài khoản";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formTaoLogin_Load);
             this.panel1.ResumeLayout(false);

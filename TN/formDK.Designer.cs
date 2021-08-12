@@ -282,7 +282,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 721);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 713);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(978, 20);
             // 
@@ -292,7 +292,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 697);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 689);
             // 
             // barDockControlRight
             // 
@@ -300,7 +300,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(978, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 697);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 689);
             // 
             // barButtonItem6
             // 
@@ -412,7 +412,7 @@
             this.gbDK.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbDK.Location = new System.Drawing.Point(0, 234);
             this.gbDK.Name = "gbDK";
-            this.gbDK.Size = new System.Drawing.Size(978, 487);
+            this.gbDK.Size = new System.Drawing.Size(978, 479);
             this.gbDK.TabIndex = 9;
             this.gbDK.TabStop = false;
             // 
@@ -500,7 +500,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(978, 741);
+            this.ClientSize = new System.Drawing.Size(978, 733);
             this.Controls.Add(this.gbDK);
             this.Controls.Add(this.dANGKYGridControl);
             this.Controls.Add(this.panel1);
@@ -511,7 +511,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formDK";
-            this.Text = "formDK";
+            this.Text = "Đăng ký";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formDK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

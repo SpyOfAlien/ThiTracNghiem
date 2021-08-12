@@ -290,15 +290,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1362, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(1356, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 572);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 555);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1362, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1356, 20);
             // 
             // barDockControlLeft
             // 
@@ -306,15 +306,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 548);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 531);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1362, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1356, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 548);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 531);
             // 
             // barButtonItem6
             // 
@@ -338,7 +338,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1362, 57);
+            this.panel1.Size = new System.Drawing.Size(1356, 57);
             this.panel1.TabIndex = 5;
             // 
             // label1
@@ -365,7 +365,7 @@
             this.gbLop.Dock = System.Windows.Forms.DockStyle.Left;
             this.gbLop.Location = new System.Drawing.Point(0, 81);
             this.gbLop.Name = "gbLop";
-            this.gbLop.Size = new System.Drawing.Size(511, 491);
+            this.gbLop.Size = new System.Drawing.Size(511, 474);
             this.gbLop.TabIndex = 6;
             this.gbLop.TabStop = false;
             this.gbLop.Text = "Lớp";
@@ -378,7 +378,7 @@
             this.lOPGridControl.MainView = this.lopGridView;
             this.lOPGridControl.MenuManager = this.barManager1;
             this.lOPGridControl.Name = "lOPGridControl";
-            this.lOPGridControl.Size = new System.Drawing.Size(505, 466);
+            this.lOPGridControl.Size = new System.Drawing.Size(505, 449);
             this.lOPGridControl.TabIndex = 0;
             this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.lopGridView});
@@ -437,9 +437,9 @@
             this.gbSV.Controls.Add(this.gbSVField);
             this.gbSV.Controls.Add(this.sINHVIENGridControl);
             this.gbSV.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gbSV.Location = new System.Drawing.Point(517, 81);
+            this.gbSV.Location = new System.Drawing.Point(511, 81);
             this.gbSV.Name = "gbSV";
-            this.gbSV.Size = new System.Drawing.Size(845, 491);
+            this.gbSV.Size = new System.Drawing.Size(845, 474);
             this.gbSV.TabIndex = 7;
             this.gbSV.TabStop = false;
             this.gbSV.Text = "Sinh viên";
@@ -462,7 +462,7 @@
             this.gbSVField.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbSVField.Location = new System.Drawing.Point(3, 242);
             this.gbSVField.Name = "gbSVField";
-            this.gbSVField.Size = new System.Drawing.Size(839, 246);
+            this.gbSVField.Size = new System.Drawing.Size(839, 229);
             this.gbSVField.TabIndex = 1;
             this.gbSVField.TabStop = false;
             // 
@@ -654,7 +654,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1362, 592);
+            this.ClientSize = new System.Drawing.Size(1354, 592);
             this.Controls.Add(this.gbSV);
             this.Controls.Add(this.gbLop);
             this.Controls.Add(this.panel1);
@@ -665,7 +665,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formLopSV";
-            this.Text = "formLopSV";
+            this.Text = "Lớp sinh viên";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formLopSV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

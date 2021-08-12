@@ -86,7 +86,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 927);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1345, 134);
+            this.panel1.Size = new System.Drawing.Size(1337, 134);
             this.panel1.TabIndex = 0;
             // 
             // btnThi
@@ -148,7 +148,7 @@
             this.pnSV.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnSV.Location = new System.Drawing.Point(0, 0);
             this.pnSV.Name = "pnSV";
-            this.pnSV.Size = new System.Drawing.Size(1345, 455);
+            this.pnSV.Size = new System.Drawing.Size(1337, 455);
             this.pnSV.TabIndex = 1;
             // 
             // sP_LAY_LICH_THIGridControl
@@ -158,7 +158,7 @@
             this.sP_LAY_LICH_THIGridControl.Location = new System.Drawing.Point(0, 0);
             this.sP_LAY_LICH_THIGridControl.MainView = this.gridViewSV;
             this.sP_LAY_LICH_THIGridControl.Name = "sP_LAY_LICH_THIGridControl";
-            this.sP_LAY_LICH_THIGridControl.Size = new System.Drawing.Size(1345, 455);
+            this.sP_LAY_LICH_THIGridControl.Size = new System.Drawing.Size(1337, 455);
             this.sP_LAY_LICH_THIGridControl.TabIndex = 0;
             this.sP_LAY_LICH_THIGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSV});
@@ -231,7 +231,7 @@
             this.pnGV.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnGV.Location = new System.Drawing.Point(0, 455);
             this.pnGV.Name = "pnGV";
-            this.pnGV.Size = new System.Drawing.Size(1345, 472);
+            this.pnGV.Size = new System.Drawing.Size(1337, 472);
             this.pnGV.TabIndex = 2;
             // 
             // sP_LAY_LICH_THI_THUGridControl
@@ -241,7 +241,7 @@
             this.sP_LAY_LICH_THI_THUGridControl.Location = new System.Drawing.Point(0, 0);
             this.sP_LAY_LICH_THI_THUGridControl.MainView = this.gridViewGV;
             this.sP_LAY_LICH_THI_THUGridControl.Name = "sP_LAY_LICH_THI_THUGridControl";
-            this.sP_LAY_LICH_THI_THUGridControl.Size = new System.Drawing.Size(1345, 472);
+            this.sP_LAY_LICH_THI_THUGridControl.Size = new System.Drawing.Size(1337, 472);
             this.sP_LAY_LICH_THI_THUGridControl.TabIndex = 0;
             this.sP_LAY_LICH_THI_THUGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewGV});
@@ -313,14 +313,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.pnGV);
             this.Controls.Add(this.pnSV);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formLichThi";
-            this.Text = "formLichThi";
+            this.Text = "Lịch thi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formLichThi_Load);
             this.panel1.ResumeLayout(false);

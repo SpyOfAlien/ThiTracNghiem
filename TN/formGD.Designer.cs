@@ -67,6 +67,7 @@
             this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAGV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gbGD = new System.Windows.Forms.GroupBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.cbMaGV = new System.Windows.Forms.ComboBox();
             this.cbMaLop = new System.Windows.Forms.ComboBox();
             this.cbMaMH = new System.Windows.Forms.ComboBox();
@@ -74,7 +75,6 @@
             this.bdsGV = new System.Windows.Forms.BindingSource(this.components);
             this.bdsMH = new System.Windows.Forms.BindingSource(this.components);
             this.bdsLop = new System.Windows.Forms.BindingSource(this.components);
-            this.btnCancel = new System.Windows.Forms.Button();
             mAMHLabel = new System.Windows.Forms.Label();
             mALOPLabel = new System.Windows.Forms.Label();
             mAGVLabel = new System.Windows.Forms.Label();
@@ -444,6 +444,16 @@
             this.gbGD.TabIndex = 8;
             this.gbGD.TabStop = false;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(735, 210);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(100, 29);
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // cbMaGV
             // 
             this.cbMaGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGD, "MAGV", true));
@@ -491,16 +501,6 @@
             this.bdsLop.DataMember = "LOP";
             this.bdsLop.DataSource = this.dS;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(735, 210);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 29);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // formGD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -516,7 +516,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formGD";
-            this.Text = "formGD";
+            this.Text = "Giảng dạy";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formGD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
