@@ -58,8 +58,6 @@ namespace TN
             obj.SetParameterValue("MALOP", cmbTenLop.SelectedValue.ToString());
             obj.SetParameterValue("MAMH", cmbTenMH.SelectedValue.ToString());
             crystalReportViewer.ReportSource = obj;
-
-            cmbCS.Enabled = cmbTenLop.Enabled = cmbTenMH.Enabled = btnXem.Enabled = false;
         }
 
         private void cmbCS_SelectedIndexChanged(object sender, EventArgs e)
