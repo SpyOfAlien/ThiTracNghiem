@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TNDataSet" targetNamespace="http://tempuri.org/TNDataSet.xsd" xmlns:mstns="http://tempuri.org/TNDataSet.xsd" xmlns="http://tempuri.org/TNDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TNConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TNConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TN.Properties.Settings.GlobalReference.Default.TNConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GET_SUBSCRIBERSTableAdapter" GeneratorDataComponentClassName="GET_SUBSCRIBERSTableAdapter" Name="GET_SUBSCRIBERS" UserDataComponentName="GET_SUBSCRIBERSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TNConnectionString (Settings)" DbObjectName="TN.dbo.GET_SUBSCRIBERS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TENCS, TENSERVER FROM dbo.GET_SUBSCRIBERS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TENCS" DataSetColumn="TENCS" />
+              <Mapping SourceColumn="TENSERVER" DataSetColumn="TENSERVER" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TNDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TNDataSet" msprop:Generator_UserDSName="TNDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="GET_SUBSCRIBERS" msprop:Generator_TableClassName="GET_SUBSCRIBERSDataTable" msprop:Generator_TableVarName="tableGET_SUBSCRIBERS" msprop:Generator_TablePropName="GET_SUBSCRIBERS" msprop:Generator_RowDeletingName="GET_SUBSCRIBERSRowDeleting" msprop:Generator_RowChangingName="GET_SUBSCRIBERSRowChanging" msprop:Generator_RowEvHandlerName="GET_SUBSCRIBERSRowChangeEventHandler" msprop:Generator_RowDeletedName="GET_SUBSCRIBERSRowDeleted" msprop:Generator_UserTableName="GET_SUBSCRIBERS" msprop:Generator_RowChangedName="GET_SUBSCRIBERSRowChanged" msprop:Generator_RowEvArgName="GET_SUBSCRIBERSRowChangeEvent" msprop:Generator_RowClassName="GET_SUBSCRIBERSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TENCS" msprop:Generator_ColumnVarNameInTable="columnTENCS" msprop:Generator_ColumnPropNameInRow="TENCS" msprop:Generator_ColumnPropNameInTable="TENCSColumn" msprop:Generator_UserColumnName="TENCS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENSERVER" msprop:Generator_ColumnVarNameInTable="columnTENSERVER" msprop:Generator_ColumnPropNameInRow="TENSERVER" msprop:Generator_ColumnPropNameInTable="TENSERVERColumn" msprop:Generator_UserColumnName="TENSERVER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
