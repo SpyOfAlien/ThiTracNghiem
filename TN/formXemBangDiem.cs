@@ -29,9 +29,17 @@ namespace TN
             string strlenh = "EXEC SP_MH_LOP_DA_THI";
             dsLOP_MH_DA_THI = Program.ExecSqlDataTable(strlenh);
 
-            cmbTenLop.DisplayMember = "TENLOP";
-            cmbTenLop.ValueMember = "MALOP";
-            cmbTenLop.DataSource = cbLopDataSource(dsLOP_MH_DA_THI);
+            if (dsLOP_MH_DA_THI.Rows.Count > 0)
+            {
+                cmbTenLop.DisplayMember = "TENLOP";
+                cmbTenLop.ValueMember = "MALOP";
+                cmbTenLop.DataSource = cbLopDataSource(dsLOP_MH_DA_THI);
+                cmbTenLop.Enabled = cmbTenMH.Enabled = btnXem.Enabled = true;
+            } else
+            {
+                MessageBox.Show("Chưa có lớp nào đã thi ở cơ sở hiện tại");
+                cmbTenLop.Enabled = cmbTenMH.Enabled = btnXem.Enabled = false;
+            }
 
             if (Program.mGroup != "PGV")
             {
@@ -41,7 +49,6 @@ namespace TN
             {
                 cmbCS.Enabled = true;
             }
-            cmbTenLop.Enabled = cmbTenMH.Enabled = btnXem.Enabled = true;
         }
 
         private void btnXem_Click(object sender, EventArgs e)
@@ -62,7 +69,7 @@ namespace TN
 
         private void cmbCS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbCS.SelectedValue != null)
+            if (this.IsDisposed == false &&  cmbCS.SelectedValue != null)
             {
                 if (cmbCS.ValueMember != "")
                 {
@@ -72,12 +79,12 @@ namespace TN
                     }
                     if (cmbCS.SelectedIndex != Program.mCoso)
                     {
-                        Program.username = Program.remoteLogin;
+                        Program.login = Program.remoteLogin;
                         Program.password = Program.remotePassword;
                     }
                     else
                     {
-                        Program.username = Program.loginDN;
+                        Program.login = Program.loginDN;
                         Program.password = Program.passwordDN;
                     }
                     if (Program.ketNoi() == 0)
@@ -90,11 +97,18 @@ namespace TN
                     string strlenh = "EXEC SP_MH_LOP_DA_THI";
                     dsLOP_MH_DA_THI = Program.ExecSqlDataTable(strlenh);
 
-                    cmbTenLop.DataSource = dsLOP_MH_DA_THI;
-                    cmbTenLop.DisplayMember = "TENLOP";
-                    cmbTenLop.ValueMember = "MALOP";
-                    cmbTenLop.SelectedIndex = -1;
-                    cmbTenMH.SelectedIndex = -1;
+                    if (dsLOP_MH_DA_THI.Rows.Count > 0)
+                    {
+                        cmbTenLop.DataSource = cbLopDataSource(dsLOP_MH_DA_THI);
+                        cmbTenLop.DisplayMember = "TENLOP";
+                        cmbTenLop.ValueMember = "MALOP";
+                        cmbTenLop.Enabled = cmbTenMH.Enabled = btnXem.Enabled = true;
+                    } else
+                    {
+                        cmbTenLop.Enabled = cmbTenMH.Enabled = btnXem.Enabled = false;
+                        MessageBox.Show("Chưa có lớp nào đã thi ở cơ sở hiện tại");
+                    }
+                    
                 }
             }
         }
@@ -135,10 +149,16 @@ namespace TN
 
         private DataTable cbLopDataSource(DataTable dt)
         {
-            DataTable lopDT = new DataTable();
-
-            lopDT = dt.AsEnumerable().GroupBy(x => x.Field<string>("MALOP")).Select(y => y.First()).CopyToDataTable();
-            return lopDT;
+            if (dt.Rows.Count > 0)
+            {
+                DataTable lopDT = new DataTable();
+                lopDT = dt.AsEnumerable().GroupBy(x => x.Field<string>("MALOP")).Select(y => y.First()).CopyToDataTable();
+                return lopDT;
+            }
+            else
+            {
+                return dt;
+            }
         }
     }
 }

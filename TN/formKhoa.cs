@@ -85,7 +85,7 @@ namespace TN
 
         private void cmdCoSo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmdCoSo.SelectedValue != null)
+            if (this.IsDisposed == false && cmdCoSo.SelectedValue != null)
             {
                 if (cmdCoSo.ValueMember != "")
                 {
@@ -95,12 +95,12 @@ namespace TN
                     }
                     if (cmdCoSo.SelectedIndex != Program.mCoso)
                     {
-                        Program.username = Program.remoteLogin;
+                        Program.login = Program.remoteLogin;
                         Program.password = Program.remotePassword;
                     }
                     else
                     {
-                        Program.username = Program.loginDN;
+                        Program.login = Program.loginDN;
                         Program.password = Program.passwordDN;
                     }
                     if (Program.ketNoi() == 0)

@@ -31,7 +31,7 @@ namespace TN
 
         private void cbLogin_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.cbLogin.SelectedValue != null)
+            if (this.IsDisposed == false && this.cbLogin.SelectedValue != null)
             {
                 Program.servername = this.cbLogin.SelectedValue.ToString();
             }
@@ -51,7 +51,7 @@ namespace TN
                 return;
             }
 
-            Program.username = txtDangNhap.Text;
+            Program.login = txtDangNhap.Text;
             Program.password = txtPass.Text;
 
            
@@ -59,6 +59,7 @@ namespace TN
 
             Program.bds_dspm =  this.bds_DSPM;
             Program.mCoso = cbLogin.SelectedIndex;
+            Program.username = txtDangNhap.Text;
             Program.loginDN = Program.username;
             Program.passwordDN = Program.password;
 

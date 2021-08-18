@@ -69,7 +69,7 @@ namespace TN
 
         private void cmdCoSo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmdCoSo.SelectedValue != null)
+            if (this.IsDisposed == false && cmdCoSo.SelectedValue != null)
             {
                 if (cmdCoSo.ValueMember != "")
                 {
@@ -79,12 +79,12 @@ namespace TN
                     }
                     if (cmdCoSo.SelectedIndex != Program.mCoso)
                     {
-                        Program.username = Program.remoteLogin;
+                        Program.login = Program.remoteLogin;
                         Program.password = Program.remotePassword;
                     }
                     else
                     {
-                        Program.username = Program.loginDN;
+                        Program.login = Program.loginDN;
                         Program.password = Program.passwordDN;
                     }
                     if (Program.ketNoi() == 0)
@@ -114,84 +114,61 @@ namespace TN
 
             txtMaLop.Enabled = false;
             gbSVField.Enabled = true;
-            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnLamMoi.Enabled = false;
+            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnLamMoi.Enabled = btnHoanTac.Enabled = false;
 
         }
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (check)
+           
+            if (txtMaSV.Text.Trim() == "")
             {
-                if (txtHo.Text.Trim() == "")
-                {
-                    MessageBox.Show("Họ sinh viên không được để trống!");
-                    txtHo.Focus();
-                }
-                else if (txtTen.Text.Trim() == "")
-                {
-                    MessageBox.Show("Tên sinh viên không được để trống!");
-                    txtTen.Focus();
-                }
-                else
-                {
-                    this.bdsSV.EndEdit();
-                    bdsSV.ResetCurrentItem();
-                    this.sINHVIENTableAdapter.Update(this.dS.SINHVIEN);
-                    this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
-                    MessageBox.Show("Cập nhật sinh viên thành công!", "Notification", MessageBoxButtons.OK);
-                }
-
+                MessageBox.Show("Mã sinh viên không được để trống!");
+                txtMaSV.Focus();
+            }
+            else if (txtHo.Text.Trim() == "")
+            {
+                MessageBox.Show("Họ sinh viên không được để trống!");
+                txtHo.Focus();
+            }
+            else if (txtTen.Text.Trim() == "")
+            {
+                MessageBox.Show("Tên sinh viên không được để trống!");
+                txtTen.Focus();
             }
             else
             {
-                if (txtMaSV.Text.Trim() == "")
+                if (!check)
                 {
-                    MessageBox.Show("Mã sinh viên không được để trống!");
-                    txtMaSV.Focus();
-                }
-                else if (txtHo.Text.Trim() == "")
-                {
-                    MessageBox.Show("Họ sinh viên không được để trống!");
-                    txtHo.Focus();
-                }
-                else if (txtTen.Text.Trim() == "")
-                {
-                    MessageBox.Show("Tên sinh viên không được để trống!");
-                    txtTen.Focus();
-                }
-                else
-                {
-                    SqlDataReader myReader1;
-                    String strlenh1 = "DECLARE	@return_value int EXEC @return_value = [dbo].[SP_KTMASV]" +
+                    SqlDataReader myReader;
+                    String strlenh = "DECLARE	@return_value int EXEC @return_value = [dbo].[SP_KTMASV]" +
                             "@MASV = N'" + txtMaSV.Text + "' SELECT  'Return Value' = @return_value";
 
-                    myReader1 = Program.ExecSqlDataReader(strlenh1);
+                    myReader = Program.ExecSqlDataReader(strlenh);
 
-                    if (myReader1 == null) return;
+                    if (myReader == null) return;
 
-                    myReader1.Read();
-                    int value1 = myReader1.GetInt32(0);
+                    myReader.Read();
+                    int value = myReader.GetInt32(0);
 
-                    myReader1.Close();
-                    if (value1 == 1)
+                    myReader.Close();
+                    if (value == 1)
                     {
                         MessageBox.Show("Mã sinh viên đã tồn tại. Hãy nhập lại.");
                         txtMaSV.Focus();
-                    }
-
-                    else
-                    {
-                        this.bdsSV.EndEdit();
-                        bdsSV.ResetCurrentItem();
-                        this.sINHVIENTableAdapter.Update(this.dS.SINHVIEN);
-                        this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
-                        MessageBox.Show("Cập nhật sinh viên thành công!", "Notification", MessageBoxButtons.OK);
+                        return;
                     }
                 }
-            }
 
-            gbSVField.Enabled = false;
-            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnLamMoi.Enabled = true;
+                    this.bdsSV.EndEdit();
+                    bdsSV.ResetCurrentItem();
+                    this.sINHVIENTableAdapter.Update(this.dS.SINHVIEN);
+                    MessageBox.Show("Cập nhật sinh viên thành công!", "Notification", MessageBoxButtons.OK);
+
+                    gbSVField.Enabled = false;
+                    btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnLamMoi.Enabled = btnHoanTac.Enabled = true;
+                
+            }
         }
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -203,7 +180,7 @@ namespace TN
             txtHo.Focus();
             txtMaLop.Enabled = txtMaSV.Enabled = false;
             gbSVField.Enabled = true;
-            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnLamMoi.Enabled = false;
+            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnLamMoi.Enabled = btnHoanTac.Enabled = false;
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

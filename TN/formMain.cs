@@ -175,7 +175,7 @@ namespace TN
 
         private void btnBD_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form form = this.CheckExists(typeof(formLichThi));
+            Form form = this.CheckExists(typeof(formXemBangDiem));
             if (form != null) form.Activate();
             else
             {
@@ -222,6 +222,7 @@ namespace TN
         {
             this.dangXuat = true;
             this.Close();
+            this.ribbonControl.Dispose();
             Program.formDangNhap.Show();
         }
 

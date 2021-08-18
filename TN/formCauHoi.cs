@@ -19,15 +19,15 @@ namespace TN
     public partial class formCauHoi : Form
     {
 
-        public string prevA
+        private string prevA
         { get; set; }
-        public string prevB
+        private string prevB
         { get; set; }
-        public string prevC
+        private string prevC
         { get; set; }
-        public string prevD
+        private string prevD
         { get; set; }
-        public int prevFocus
+        private int prevFocus
         { get; set; }
 
         private string prevDA { get; set; }
@@ -35,6 +35,9 @@ namespace TN
 
         private bool themMoi = false;
         private bool chinhsua = false; // control enable LC when CH grid view focus change
+
+        //private DataTable monDaDay;
+
         public formCauHoi()
         {
             InitializeComponent();
@@ -77,6 +80,12 @@ namespace TN
             this.handleEnableAllFields();
             this.btnLuu.Enabled = this.btnCancel.Enabled = false;
 
+            //string cmd = String.Format("SELECT MAMH FROM GIANGDAY WHERE MAGV='{0}'", Program.username);
+            //DataTable mhDT = Program.ExecSqlDataTable(cmd);
+
+            //cbMaMH.DisplayMember = "MAMH";
+            //cbMaMH.ValueMember = "MAMH";
+            //cbMaMH.DataSource = mhDT;
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -115,7 +124,6 @@ namespace TN
 
         private void capNhatLuaChon()
         {
-         
             this.txtA.Text = (string)this.LuaChonGridView.GetRowCellValue(0, "NOIDUNG");
             this.txtB.Text = (string)this.LuaChonGridView.GetRowCellValue(1, "NOIDUNG");
             this.txtC.Text = (string)this.LuaChonGridView.GetRowCellValue(2, "NOIDUNG");
@@ -274,12 +282,28 @@ namespace TN
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Int32 idCH = Int32.Parse(CauHoiGridView.GetFocusedRowCellValue("IDCH").ToString().Trim());
+            SqlDataReader myReader;
+            String strlenh = "DECLARE	@return_value int EXEC @return_value = [dbo].[SP_KT_CH_DA_THI]" +
+                    "@IDCH = N'" + idCH + "' SELECT  'Return Value' = @return_value";
+            myReader = Program.ExecSqlDataReader(strlenh);
+
+            if (myReader == null) return;
+
+            myReader.Read();
+            int value = myReader.GetInt32(0);
+
+            myReader.Close();
+            if (value == 1)
+            {
+                MessageBox.Show("Câu hỏi này đã được thi. Không thể xóa!");
+                txtND.Focus();
+                return;
+            }
             DialogResult dialogXoa =  MessageBox.Show("Bạn có thực sự muốn xóa câu hỏi này", "Xóa", MessageBoxButtons.OKCancel);
 
             if (dialogXoa == DialogResult.OK)
             {
-                Int32 idCH = Int32.Parse(CauHoiGridView.GetFocusedRowCellValue("IDCH").ToString().Trim());
-
                 String cmd = "DECLARE	@return_value int EXEC @return_value = [dbo].[SP_XOALC]" +
                         "@IDCH = N'" + idCH + "' SELECT  'Return Value' = @return_value";
                 Int32 rowEffected = Program.ExecSqlNonQuery(cmd);
@@ -295,6 +319,24 @@ namespace TN
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Int32 idCH = Int32.Parse(CauHoiGridView.GetFocusedRowCellValue("IDCH").ToString().Trim());
+            SqlDataReader myReader;
+            String strlenh = "DECLARE	@return_value int EXEC @return_value = [dbo].[SP_KT_CH_DA_THI]" +
+                    "@IDCH = N'" + idCH + "' SELECT  'Return Value' = @return_value";
+            myReader = Program.ExecSqlDataReader(strlenh);
+
+            if (myReader == null) return;
+
+            myReader.Read();
+            int value = myReader.GetInt32(0);
+
+            myReader.Close();
+            if (value == 1)
+            {
+                MessageBox.Show("Câu hỏi này đã được thi. Không thể sửa!");
+                txtND.Focus();
+                return;
+            }
             themMoi = false;
             chinhsua = true;
             prevA = this.txtA.Text.Trim();

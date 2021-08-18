@@ -83,8 +83,6 @@ namespace TN
             timer.Elapsed += OnTimedEvent;
             timer.Interval = 1000;
 
-            
-
             m = duration;
             s = 0;
             this.setTimer();
@@ -123,7 +121,6 @@ namespace TN
 
                 this.setTimer();
             }));
-            
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

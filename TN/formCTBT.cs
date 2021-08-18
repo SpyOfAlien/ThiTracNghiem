@@ -43,7 +43,7 @@ namespace TN
 
             if (Program.mGroup == "SINHVIEN")
             {
-                DS_SV_MON_DA_THI = Program.ExecSqlDataTable(String.Format("EXEC SP_DS_MON_HOC_SV @MASV={0}", Program.username));
+                DS_SV_MON_DA_THI = Program.ExecSqlDataTable(String.Format("EXEC SP_DS_LOP_MON_HOC_SV_DA_THI @MASV={0}", Program.username));
 
                 if (DS_SV_MON_DA_THI.Rows.Count > 0)
                 {
@@ -73,15 +73,25 @@ namespace TN
             } else
             {
                 DS_LOP_DA_THI = Program.ExecSqlDataTable("EXEC SP_MH_LOP_DA_THI");
-                cmbLop.DisplayMember = "TENLOP";
-                cmbLop.ValueMember = "MALOP";
-                cmbLop.DataSource = cbLopDataSource(DS_LOP_DA_THI);
+
+                if (DS_LOP_DA_THI.Rows.Count > 0)
+                {
+                    cmbLop.DisplayMember = "TENLOP";
+                    cmbLop.ValueMember = "MALOP";
+                    cmbLop.DataSource = cbLopDataSource(DS_LOP_DA_THI);
+                } else
+                {
+                    MessageBox.Show("Chưa có lớp nào đã thi ở cơ sở hiện tại");
+                    cmbLop.Enabled = cmbSinhVien.Enabled = cmbTenMH.Enabled = btnXem.Enabled = false;
+                    cmbLop.DataSource = cmbSinhVien.DataSource = cmbTenMH.DataSource = null;
+                }
+              
             }
         }
 
         private void cmbCS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbCS.SelectedValue != null)
+            if (this.IsDisposed == false && cmbCS.SelectedValue != null)
             {
                 if (cmbCS.ValueMember != "")
                 {
@@ -91,12 +101,12 @@ namespace TN
                     }
                     if (cmbCS.SelectedIndex != Program.mCoso)
                     {
-                        Program.username = Program.remoteLogin;
+                        Program.login = Program.remoteLogin;
                         Program.password = Program.remotePassword;
                     }
                     else
                     {
-                        Program.username = Program.loginDN;
+                        Program.login = Program.loginDN;
                         Program.password = Program.passwordDN;
                     }
                     if (Program.ketNoi() == 0)
@@ -117,6 +127,7 @@ namespace TN
                         cmbLop.Enabled = cmbSinhVien.Enabled = cmbTenMH.Enabled = btnXem.Enabled = true;
                     } else
                     {
+                        MessageBox.Show("Chưa có lớp nào đã thi ở cơ sở hiện tại");
                         cmbLop.Enabled = cmbSinhVien.Enabled = cmbTenMH.Enabled = btnXem.Enabled = false;
                         cmbLop.DataSource = cmbSinhVien.DataSource = cmbTenMH.DataSource = null;
                     }
@@ -128,10 +139,15 @@ namespace TN
 
         private DataTable cbLopDataSource(DataTable dt)
         {
-            DataTable lopDT = new DataTable();
-
-            lopDT = dt.AsEnumerable().GroupBy(x => x.Field<string>("MALOP")).Select(y => y.First()).CopyToDataTable();
-            return lopDT;
+            if (dt.Rows.Count > 0)
+            {
+                DataTable lopDT = new DataTable();
+                lopDT = dt.AsEnumerable().GroupBy(x => x.Field<string>("MALOP")).Select(y => y.First()).CopyToDataTable();
+                return lopDT;
+            } else
+            {
+                return dt;
+            }
         }
 
         private void cmbLop_SelectedIndexChanged(object sender, EventArgs e)
@@ -156,7 +172,7 @@ namespace TN
         {
             if (cmbSinhVien.SelectedValue != null && Program.mGroup != "SINHVIEN")
             {
-                string cmd = String.Format("EXEC SP_DS_MON_HOC_SV @MASV={0}", cmbSinhVien.SelectedValue.ToString().Trim());
+                string cmd = String.Format("EXEC SP_DS_LOP_MON_HOC_SV_DA_THI @MASV={0}", cmbSinhVien.SelectedValue.ToString().Trim());
                 DS_SV_MON_DA_THI = Program.ExecSqlDataTable(cmd);
 
                 if (DS_SV_MON_DA_THI.Rows.Count > 0)
@@ -169,6 +185,7 @@ namespace TN
                 } else
                 {
                     btnXem.Enabled = false;
+                    MessageBox.Show("Sinh viên chưa thi môn học nào");
                 }
               
             }

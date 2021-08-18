@@ -43,7 +43,7 @@ namespace TN
             try
             {
                 Program.connstr = "Data Source=" + Program.servername + ";Initial Catalog=" +
-                Program.database + ";User ID=" + Program.username + ";password=" + Program.password;
+                Program.database + ";User ID=" + Program.login + ";password=" + Program.password;
                 Program.conn.ConnectionString = Program.connstr;
                 Program.conn.Open();
                 return 1;
